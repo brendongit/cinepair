@@ -1,6 +1,6 @@
 {
-  "name": "Cinematch",
-  "short_name": "Cinematch",
+  "name": "MB filmes",
+  "short_name": "MB filmes",
   "description": "Gerencie a lista de filmes do casal",
   "start_url": "/",
   "display": "standalone",

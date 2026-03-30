@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen max-w-lg mx-auto px-4 py-6 space-y-5">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">🎬 Cinematch</h1>
+        <h1 className="text-2xl font-bold tracking-tight">🎬 MB filmes</h1>
       </div>
 
       <HomeClient

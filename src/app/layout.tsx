@@ -6,13 +6,13 @@ import { Providers } from "@/components/providers";
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Cinematch",
+  title: "MB filmes",
   description: "Gerencie a lista de filmes do casal",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Cinematch",
+    title: "MB filmes",
   },
 };
 
