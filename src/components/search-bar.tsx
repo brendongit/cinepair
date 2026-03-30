@@ -107,37 +107,39 @@ export function SearchBar({ watchlistItems = [], category }: SearchBarProps) {
               return (
                 <li
                   key={movie.id}
-                  className={`flex items-center gap-3 p-3 ${alreadyAdded ? "opacity-60" : ""}`}
+                  className={`flex flex-col gap-2 p-3 ${alreadyAdded ? "opacity-60" : ""}`}
                 >
-                  <div className="relative w-10 h-14 flex-shrink-0 rounded overflow-hidden bg-muted">
-                    <Image
-                      src={getTMDBImageUrl(movie.poster_path)}
-                      alt={movie.title || movie.name || ""}
-                      fill
-                      className="object-cover"
-                      sizes="40px"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5">
-                      <p className="font-medium text-sm truncate">
-                        {movie.title || movie.name}
-                      </p>
-                      {alreadyAdded && (
-                        <CheckCircle2 className="h-3.5 w-3.5 text-green-500 flex-shrink-0" />
-                      )}
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-14 flex-shrink-0 rounded overflow-hidden bg-muted">
+                      <Image
+                        src={getTMDBImageUrl(movie.poster_path)}
+                        alt={movie.title || movie.name || ""}
+                        fill
+                        className="object-cover"
+                        sizes="40px"
+                      />
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      {alreadyAdded
-                        ? "Já na lista"
-                        : `${movie.media_type === "movie" ? "Filme" : "Série"} • ${(movie.release_date || movie.first_air_date || "").slice(0, 4)}`}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <p className="font-medium text-sm">
+                          {movie.title || movie.name}
+                        </p>
+                        {alreadyAdded && (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-green-500 flex-shrink-0" />
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        {alreadyAdded
+                          ? "Já na lista"
+                          : `${movie.media_type === "movie" ? "Filme" : "Série"} • ${(movie.release_date || movie.first_air_date || "").slice(0, 4)}`}
+                      </p>
+                    </div>
                   </div>
                   {!alreadyAdded && (
                     <button
                       onClick={() => handleAdd(movie)}
                       disabled={adding === movie.id}
-                      className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition disabled:opacity-50 whitespace-nowrap"
+                      className="flex items-center justify-center gap-1 w-full text-xs px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition disabled:opacity-50"
                     >
                       {adding === movie.id ? (
                         <Loader2 className="h-3 w-3 animate-spin" />
