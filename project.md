@@ -1,4 +1,4 @@
-🚀 Prompt do Projeto: CinePair (Next.js Edition)
+🚀 Prompt do Projeto: Cinematch (Next.js Edition)
 Contexto do Projeto
 "Atue como um Engenheiro de Software Fullstack Especialista em Next.js e Supabase. Preciso desenvolver um MVP de uma Web App Mobile-First para casais gerenciarem listas de filmes e séries. O objetivo é criar 'hype' para lançamentos de cinema e organizar maratonas em casa."
 
