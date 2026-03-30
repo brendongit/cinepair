@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SearchBar } from "@/components/search-bar";
 import { Watchlist } from "@/components/watchlist";
@@ -21,7 +22,16 @@ export function HomeClient({
   return (
     <>
       {activeCategory && (
-        <SearchBar watchlistItems={watchlist} category={activeCategory} />
+        <div>
+          <Image
+            src="/snoopy.png"
+            alt="Snoopy"
+            width={80}
+            height={80}
+            className="object-contain scale-x-[-1]"
+          />
+          <SearchBar watchlistItems={watchlist} category={activeCategory} />
+        </div>
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
