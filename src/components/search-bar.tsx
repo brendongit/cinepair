@@ -71,9 +71,17 @@ export function SearchBar({ watchlistItems = [], category }: SearchBarProps) {
   }
 
   const watchlistTmdbIds = new Set(watchlistItems.map((i) => i.tmdb_id));
+  const currentYear = new Date().getFullYear();
 
   const results = data?.results
-    ?.filter((r: TMDBMovie) => r.media_type === "movie" || r.media_type === "tv")
+    ?.filter((r: TMDBMovie) => {
+      if (r.media_type !== "movie" && r.media_type !== "tv") return false;
+      if (category === "cinema") {
+        const year = parseInt((r.release_date || r.first_air_date || "0").slice(0, 4));
+        return year >= currentYear;
+      }
+      return true;
+    })
     .slice(0, 8);
 
   return (
